@@ -1,0 +1,304 @@
+
+/* =====================================
+   GINGERBREAD CHARACTER STAGE
+===================================== */
+
+.gingerbread-character-stage {
+  position: relative;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.boy-stage {
+  width: 263px;
+  height: 360px;
+}
+
+.girl-stage {
+  width: 272px;
+  height: 360px;
+}
+
+/* =====================================
+   CHARACTER RIG
+===================================== */
+
+.gingerbread-rig {
+  position: absolute;
+  inset: 0;
+  transform-origin: center 80%;
+}
+
+.character-part {
+  position: absolute;
+  pointer-events: none;
+}
+
+.character-part img {
+  object-fit: contain;
+}
+
+/* =====================================
+   GINGERBREAD BOY
+   Preserve original image proportions
+===================================== */
+
+.boy-rig .part-head {
+  left: 7%;
+  top: 0%;
+  width: 78%;
+  aspect-ratio: 1308 / 1202;
+  z-index: 5;
+}
+
+.boy-rig .part-body {
+  left: 19%;
+  top: 37%;
+  width: 62%;
+  aspect-ratio: 1199 / 1312;
+  z-index: 2;
+}
+
+.boy-rig .part-left-arm {
+  left: -1%;
+  top: 40%;
+  width: 37%;
+  aspect-ratio: 993 / 898;
+  z-index: 3;
+  transform-origin: 90% 35%;
+}
+
+.boy-rig .part-right-arm {
+  right: -1%;
+  top: 40%;
+  width: 37%;
+  aspect-ratio: 988 / 879;
+  z-index: 3;
+  transform-origin: 10% 35%;
+}
+
+.boy-rig .part-left-leg {
+  left: 22%;
+  top: 68%;
+  width: 30%;
+  aspect-ratio: 496 / 556;
+  z-index: 1;
+  transform-origin: 50% 8%;
+}
+
+.boy-rig .part-right-leg {
+  right: 22%;
+  top: 68%;
+  width: 30%;
+  aspect-ratio: 496 / 556;
+  z-index: 1;
+  transform-origin: 50% 8%;
+}
+
+/* =====================================
+   GINGERBREAD GIRL
+===================================== */
+
+.girl-rig .part-head {
+  left: 12%;
+  top: 5%;
+  width: 78%;
+  height: 45%;
+  z-index: 5;
+}
+
+.girl-rig .part-body {
+  left: 12%;
+  top: 42%;
+  width: 76%;
+  height: 43%;
+  z-index: 2;
+}
+
+.girl-rig .part-left-arm {
+  left: -1%;
+  top: 44%;
+  width: 36%;
+  height: 24%;
+  z-index: 3;
+  transform-origin: 90% 35%;
+}
+
+.girl-rig .part-right-arm {
+  right: -1%;
+  top: 44%;
+  width: 36%;
+  height: 24%;
+  z-index: 3;
+  transform-origin: 10% 35%;
+}
+
+.girl-rig .part-left-leg {
+  left: 21%;
+  top: 74%;
+  width: 29%;
+  height: 26%;
+  z-index: 1;
+  transform-origin: 50% 8%;
+}
+
+.girl-rig .part-right-leg {
+  right: 21%;
+  top: 74%;
+  width: 29%;
+  height: 25%;
+  z-index: 1;
+  transform-origin: 50% 8%;
+}
+
+/* =====================================
+   PHOTO WINDOW
+===================================== */
+
+.character-photo-window {
+  position: absolute;
+  left: 29%;
+  top: 28%;
+  width: 53%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.girl-rig .character-photo-window {
+  left: 26%;
+  top: 28%;
+  width: 44%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+}
+.character-photo-inner {
+  position: absolute;
+}
+
+/* =====================================
+   IDLE ANIMATION
+===================================== */
+
+.is-idle .gingerbread-rig {
+  animation: rig-idle 3s ease-in-out infinite;
+}
+
+/* =====================================
+   CHRISTMAS DANCE
+===================================== */
+
+.is-dancing .gingerbread-rig {
+  animation: rig-dance 0.8s ease-in-out infinite;
+}
+
+.is-dancing .part-left-arm {
+  animation: left-arm-dance 0.8s ease-in-out infinite;
+}
+
+.is-dancing .part-right-arm {
+  animation: right-arm-dance 0.8s ease-in-out infinite;
+}
+
+.is-dancing .part-left-leg {
+  animation: left-leg-dance 0.8s ease-in-out infinite;
+}
+
+.is-dancing .part-right-leg {
+  animation: right-leg-dance 0.8s ease-in-out infinite;
+}
+
+/* =====================================
+   KEYFRAMES
+===================================== */
+
+@keyframes rig-idle {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+}
+
+@keyframes rig-dance {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+
+@keyframes left-arm-dance {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes right-arm-dance {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes left-leg-dance {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-12deg);
+  }
+}
+
+@keyframes right-leg-dance {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(12deg);
+  }
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (min-width: 640px) {
+  .boy-stage {
+    width: 306px;
+    height: 420px;
+  }
+
+  .girl-stage {
+    width: 317px;
+    height: 420px;
+  }
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .gingerbread-rig,
+  .character-part {
+    animation: none !important;
+  }
+}
